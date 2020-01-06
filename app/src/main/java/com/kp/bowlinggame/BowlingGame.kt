@@ -5,4 +5,8 @@ class BowlingGame {
 
     }
 
+    fun score(): Int {
+        return 0
+    }
+
 }
