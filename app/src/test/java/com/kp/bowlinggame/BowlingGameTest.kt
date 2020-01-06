@@ -21,8 +21,7 @@ class BowlingGameTest {
     @Test
     @Throws(Exception::class)
     fun testAllOnes() {
-        for (i in 0..19)
-            bowlingGame.roll(1)
+        rollMany(20, 1)
         assertEquals(20, bowlingGame.score())
     }
 
