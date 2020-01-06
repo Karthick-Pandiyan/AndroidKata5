@@ -7,7 +7,8 @@ import java.lang.Exception
 
 class BowlingGameTest {
 
-    val bowlingGame = BowlingGame()
+    private val bowlingGame = BowlingGame()
+
     @Test
     @Throws(Exception::class)
     fun testGutterGame() {
