@@ -25,4 +25,9 @@ class BowlingGameTest {
             bowlingGame.roll(1)
         assertEquals(20, bowlingGame.score())
     }
+
+    private fun rollMany(n: Int, pins: Int) {
+        for (i in 0 until n)
+            bowlingGame.roll(pins)
+    }
 }
