@@ -1,12 +1,14 @@
 package com.kp.bowlinggame
 
 class BowlingGame {
-    fun roll(pins: Int) {
+    var score: Int = 0
 
+    fun roll(pins: Int) {
+        score += pins
     }
 
     fun score(): Int {
-        return 0
+        return score
     }
 
 }
