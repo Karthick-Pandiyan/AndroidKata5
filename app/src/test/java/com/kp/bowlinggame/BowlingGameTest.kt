@@ -12,9 +12,9 @@ class BowlingGameTest {
     @Test
     @Throws(Exception::class)
     fun testGutterGame() {
-        for(i in 0 until 20){
-            bowlingGame.roll(0)
-        }
+        val limit = 20
+        val pins = 0
+        rollMany(limit, pins)
         Assert.assertEquals(0, bowlingGame.score())
     }
 
@@ -26,8 +26,8 @@ class BowlingGameTest {
         assertEquals(20, bowlingGame.score())
     }
 
-    private fun rollMany(n: Int, pins: Int) {
-        for (i in 0 until n)
+    private fun rollMany(limit: Int, pins: Int) {
+        for (i in 0 until limit)
             bowlingGame.roll(pins)
     }
 }
