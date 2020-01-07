@@ -22,7 +22,7 @@ class BowlingGame {
             }
             else if (isSpare(frameIndex))
             {
-                score += 10 + rolls[frameIndex + 2]
+                score += 10 + spareBonus(frameIndex)
                 frameIndex += 2
             } else {
                 score += rolls[frameIndex] + rolls[frameIndex + 1]
@@ -35,6 +35,8 @@ class BowlingGame {
     private fun isSpare(frameIndex: Int) = rolls[frameIndex] + rolls[frameIndex + 1] === 10
 
     private fun strikeBonus(frameIndex: Int): Int {
-        return rolls[frameIndex + 1] + rolls[frameIndex + 2]
+        return rolls[frameIndex + 1] + spareBonus(frameIndex)
     }
+
+    private fun spareBonus(frameIndex: Int) = rolls[frameIndex + 2]
 }
