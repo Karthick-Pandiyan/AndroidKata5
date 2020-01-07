@@ -10,7 +10,7 @@ class BowlingGame {
 
     fun roll(pins: Int) {
         score += pins
-        rolls[currentRoll++] = pins;
+        rolls[currentRoll++] = pins
 
     }
 
@@ -18,7 +18,12 @@ class BowlingGame {
         var score = 0
         var frameIndex = 0
         for (frame in 0..9) {
-            if (isSpare(frameIndex))
+            if (rolls[frameIndex] == 10) // strike
+            {
+                score += 10 +  rolls[frameIndex+1] + rolls[frameIndex+2]
+                frameIndex++
+            }
+            else if (isSpare(frameIndex))
             {
                 score += 10 + rolls[frameIndex + 2]
                 frameIndex += 2
