@@ -25,15 +25,15 @@ class BowlingGameTest {
         assertEquals(20, bowlingGame.score())
     }
 
-//    @Test
-//    @Throws(Exception::class)
-//    fun testOneSpare() {
-//        bowlingGame.roll(5)
-//        bowlingGame.roll(5) // spare
-//        bowlingGame.roll(3)
-//        rollMany(17, 0)
-//        assertEquals(16, bowlingGame.score())
-//    }
+    @Test
+    @Throws(Exception::class)
+    fun testOneSpare() {
+        bowlingGame.roll(5)
+        bowlingGame.roll(5) // spare
+        bowlingGame.roll(3)
+        rollMany(17, 0)
+        assertEquals(16, bowlingGame.score())
+    }
 
 
     private fun rollMany(limit: Int, pins: Int) {
