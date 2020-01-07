@@ -44,6 +44,13 @@ class BowlingGameTest {
         assertEquals(24, bowlingGame.score())
     }
 
+    @Test
+    @Throws(Exception::class)
+    fun testPerfectGame() {
+        rollMany(12, 10)
+        assertEquals(300, bowlingGame.score())
+    }
+
     private fun rollStrike() {
         bowlingGame.roll(10)
     }
