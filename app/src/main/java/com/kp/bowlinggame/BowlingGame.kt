@@ -3,15 +3,12 @@ package com.kp.bowlinggame
 
 @Suppress("DEPRECATED_IDENTITY_EQUALS")
 class BowlingGame {
-    var score: Int = 0
     private val rolls = IntArray(21)
     private var currentRoll = 0
 
 
     fun roll(pins: Int) {
-        score += pins
         rolls[currentRoll++] = pins
-
     }
 
     fun score(): Int {
@@ -20,7 +17,7 @@ class BowlingGame {
         for (frame in 0..9) {
             if (rolls[frameIndex] == 10) // strike
             {
-                score += 10 +  rolls[frameIndex+1] + rolls[frameIndex+2]
+                score += 10 + strikeBonus(frameIndex)
                 frameIndex++
             }
             else if (isSpare(frameIndex))
@@ -37,4 +34,7 @@ class BowlingGame {
 
     private fun isSpare(frameIndex: Int) = rolls[frameIndex] + rolls[frameIndex + 1] === 10
 
+    private fun strikeBonus(frameIndex: Int): Int {
+        return rolls[frameIndex + 1] + rolls[frameIndex + 2]
+    }
 }
