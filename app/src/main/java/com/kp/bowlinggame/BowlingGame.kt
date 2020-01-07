@@ -15,7 +15,7 @@ class BowlingGame {
         var score = 0
         var frameIndex = 0
         for (frame in 0..9) {
-            if (rolls[frameIndex] == 10) // strike
+            if (isStrike(frameIndex))
             {
                 score += 10 + strikeBonus(frameIndex)
                 frameIndex++
@@ -31,6 +31,8 @@ class BowlingGame {
         }
         return score
     }
+
+    private fun isStrike(frameIndex: Int) = rolls[frameIndex] == 10
 
     private fun isSpare(frameIndex: Int) = sumOfBallsInFrame(frameIndex) === 10
 
