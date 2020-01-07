@@ -25,14 +25,16 @@ class BowlingGame {
                 score += 10 + spareBonus(frameIndex)
                 frameIndex += 2
             } else {
-                score += rolls[frameIndex] + rolls[frameIndex + 1]
+                score += sumOfBallsInFrame(frameIndex)
                 frameIndex += 2
             }
         }
         return score
     }
 
-    private fun isSpare(frameIndex: Int) = rolls[frameIndex] + rolls[frameIndex + 1] === 10
+    private fun isSpare(frameIndex: Int) = sumOfBallsInFrame(frameIndex) === 10
+
+    private fun sumOfBallsInFrame(frameIndex: Int) = rolls[frameIndex] + rolls[frameIndex + 1]
 
     private fun strikeBonus(frameIndex: Int): Int {
         return rolls[frameIndex + 1] + spareBonus(frameIndex)
