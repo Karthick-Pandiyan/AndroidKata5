@@ -11,7 +11,7 @@ class BowlingGameTest {
 
     @Test
     @Throws(Exception::class)
-    fun testGutterGame() {
+    fun `Given test function should do testing on Gutter Game`() {
         val limit = 20
         val pins = 0
         rollMany(limit, pins)
@@ -20,14 +20,14 @@ class BowlingGameTest {
 
     @Test
     @Throws(Exception::class)
-    fun testAllOnes() {
+    fun `Given test function should do testing on all One's logic implementation`() {
         rollMany(20, 1)
         assertEquals(20, bowlingGame.score())
     }
 
     @Test
     @Throws(Exception::class)
-    fun testOneSpare() {
+    fun `Given test function should do testing on One Spare logic implementation`() {
         rollSpare()
         bowlingGame.roll(3)
         rollMany(17, 0)
@@ -36,7 +36,7 @@ class BowlingGameTest {
 
     @Test
     @Throws(Exception::class)
-    fun testOneStrike() {
+    fun `Given test function should do testing on One Strike logic implementation`() {
         rollStrike()
         bowlingGame.roll(3)
         bowlingGame.roll(4)
@@ -46,7 +46,7 @@ class BowlingGameTest {
 
     @Test
     @Throws(Exception::class)
-    fun testPerfectGame() {
+    fun `Given test function should do testing on whole game, it is used to test the perfect game`() {
         rollMany(12, 10)
         assertEquals(300, bowlingGame.score())
     }
